@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var questionCounter = 0
+    
+    
     var body: some View {
+        
+        
+        var ques = Ques()
+        var questionsForUsers = ques.question
+        var answerForUsers = ques.answer
+
+        //print(questionsForUsers.randomElement()!)
+        
+        
         VStack {
-            Text("hello,world")
+            Text(questionsForUsers[questionCounter])
             Button("A"){
                 
             }
@@ -27,6 +39,12 @@ struct ContentView: View {
                 
             }
             .padding()
+            Button("次の問題"){
+                questionCounter = questionCounter + 1
+                print(questionsForUsers[questionCounter])
+                
+            }.fontWeight(.bold)
+            
         }
         .padding()
         
