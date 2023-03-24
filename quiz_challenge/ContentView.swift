@@ -11,6 +11,7 @@ struct ContentView: View {
     @State var questionCounter = 0
     
     
+    
     var body: some View {
         
         
@@ -19,6 +20,7 @@ struct ContentView: View {
         var answerForUsers = ques.answer
 
         //print(questionsForUsers.randomElement()!)
+        
         
         
         VStack {
@@ -40,8 +42,13 @@ struct ContentView: View {
             }
             .padding()
             Button("次の問題"){
-                questionCounter = questionCounter + 1
-                print(questionsForUsers[questionCounter])
+                if ques.question.count != (1 + questionCounter){
+                    questionCounter = questionCounter + 1
+                }else{
+                    print("もう要素なし")
+                }
+//                 print(questionsForUsers[questionCounter])
+//
                 
             }.fontWeight(.bold)
             
