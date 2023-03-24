@@ -12,8 +12,11 @@ struct ContentView: View {
     @State var answerDisplay = ""
     
     
+    
+    
     var body: some View {
         
+        var randomNum:[Int] = []
         
         var ques = Ques()
         var questionsForUsers = ques.question
@@ -27,7 +30,7 @@ struct ContentView: View {
             Text(questionsForUsers[questionCounter])
             Text(answerDisplay)
             Button("A"){
-                if ques.answer[questionCounter] == "A"{
+                if ques.answer[randomNum[questionCounter]] == "A"{
                     answerDisplay = "正解です！"
                 }else{
                     answerDisplay = "残念！正解は\(ques.answer[questionCounter])でした"
@@ -36,7 +39,7 @@ struct ContentView: View {
             }
             .padding()
             Button("B"){
-                if ques.answer[questionCounter] == "B"{
+                if ques.answer[randomNum[questionCounter]] == "B"{
                     answerDisplay = "正解です！"
                 }else{
                     answerDisplay = "残念！正解は\(ques.answer[questionCounter])でした"
@@ -46,7 +49,7 @@ struct ContentView: View {
             }
             .padding()
             Button("C"){
-                if ques.answer[questionCounter] == "C"{
+                if ques.answer[randomNum[questionCounter]] == "C"{
                     answerDisplay = "正解です！"
                 }else{
                     answerDisplay = "残念！正解は\(ques.answer[questionCounter])でした"
@@ -55,7 +58,7 @@ struct ContentView: View {
             }
             .padding()
             Button("D"){
-                if ques.answer[questionCounter] == "D"{
+                if ques.answer[randomNum[questionCounter]] == "D"{
                     answerDisplay = "正解です！"
                 }else{
                     answerDisplay = "残念！正解は\(ques.answer[questionCounter])でした"
@@ -77,6 +80,13 @@ struct ContentView: View {
             
         }
         .padding()
+        .onAppear{
+            for i in 0..<ques.question.count{
+                randomNum.append(i)
+            }
+            randomNum.shuffle()
+            randomNum[questionCounter]
+        }
         
        
         
