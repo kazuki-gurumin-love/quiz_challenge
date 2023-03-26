@@ -11,7 +11,7 @@ struct ContentView: View {
     @State var questionCounter = 0
     @State var answerDisplay = ""
     
-    
+       
     
     
     var body: some View {
@@ -24,6 +24,7 @@ struct ContentView: View {
 
         //print(questionsForUsers.randomElement()!)
         
+            
         
         
         VStack {
@@ -33,7 +34,7 @@ struct ContentView: View {
                 if ques.answer[randomNum[questionCounter]] == "A"{
                     answerDisplay = "正解です！"
                 }else{
-                    answerDisplay = "残念！正解は\(ques.answer[questionCounter])でした"
+                    answerDisplay = "残念！正解は\(ques.answer[randomNum[questionCounter]])でした"
                 }
                 
             }
@@ -42,7 +43,7 @@ struct ContentView: View {
                 if ques.answer[randomNum[questionCounter]] == "B"{
                     answerDisplay = "正解です！"
                 }else{
-                    answerDisplay = "残念！正解は\(ques.answer[questionCounter])でした"
+                    answerDisplay = "残念！正解は\(ques.answer[randomNum[questionCounter]])でした"
                 }
                 
                 
@@ -52,7 +53,7 @@ struct ContentView: View {
                 if ques.answer[randomNum[questionCounter]] == "C"{
                     answerDisplay = "正解です！"
                 }else{
-                    answerDisplay = "残念！正解は\(ques.answer[questionCounter])でした"
+                    answerDisplay = "残念！正解は\(ques.answer[randomNum[questionCounter]])でした"
                 }
                 
             }
@@ -61,7 +62,7 @@ struct ContentView: View {
                 if ques.answer[randomNum[questionCounter]] == "D"{
                     answerDisplay = "正解です！"
                 }else{
-                    answerDisplay = "残念！正解は\(ques.answer[questionCounter])でした"
+                    answerDisplay = "残念！正解は\(ques.answer[randomNum[questionCounter]])でした"
                 }
                 
             }
@@ -86,9 +87,11 @@ struct ContentView: View {
             }
             randomNum.shuffle()
             randomNum[questionCounter]
+            print(randomNum[questionCounter])
         }
         
        
+        
         
     }
     
