@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C4502992A027A7300464508 /* finalPage_displayPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4502982A027A7300464508 /* finalPage_displayPoint.swift */; };
 		1C5D25C129B89AAA00B23F4B /* quiz_challengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D25C029B89AAA00B23F4B /* quiz_challengeApp.swift */; };
 		1C5D25C329B89AAA00B23F4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D25C229B89AAA00B23F4B /* ContentView.swift */; };
 		1C5D25C529B89AAB00B23F4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C5D25C429B89AAB00B23F4B /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C4502982A027A7300464508 /* finalPage_displayPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finalPage_displayPoint.swift; sourceTree = "<group>"; };
 		1C5D25BD29B89AAA00B23F4B /* quiz_challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quiz_challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C5D25C029B89AAA00B23F4B /* quiz_challengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quiz_challengeApp.swift; sourceTree = "<group>"; };
 		1C5D25C229B89AAA00B23F4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +39,7 @@
 		1C5D25B429B89AAA00B23F4B = {
 			isa = PBXGroup;
 			children = (
+				1C4502982A027A7300464508 /* finalPage_displayPoint.swift */,
 				1C5D25BF29B89AAA00B23F4B /* quiz_challenge */,
 				1C5D25BE29B89AAA00B23F4B /* Products */,
 			);
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C5D25CF29B8AF3500B23F4B /* Ques.swift in Sources */,
+				1C4502992A027A7300464508 /* finalPage_displayPoint.swift in Sources */,
 				1C5D25C329B89AAA00B23F4B /* ContentView.swift in Sources */,
 				1C5D25C129B89AAA00B23F4B /* quiz_challengeApp.swift in Sources */,
 			);
