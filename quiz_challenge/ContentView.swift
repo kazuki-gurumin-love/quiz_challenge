@@ -11,16 +11,31 @@ struct ContentView: View {
     @State var questionCounter = 0
     @State var answerDisplay = ""
     
-       
+    var randomNum:[Int] = []
+    
+    
+    
+//    var ques = Ques()
+
+    var ques = Ques()
+    
+    init(){
+        for i in 0..<ques.question.count{
+            randomNum.append(i)
+        }
+        randomNum.shuffle()
+        
+//        print(randomNum[questionCounter])
+    }
+    
     
     
     var body: some View {
         
-        var randomNum:[Int] = []
         
-        var ques = Ques()
-        var questionsForUsers = ques.question
-        var answerForUsers = ques.answer
+        let questionsForUsers = ques.question
+//        var answerForUsers = ques.answer
+        
 
         //print(questionsForUsers.randomElement()!)
         
@@ -28,7 +43,7 @@ struct ContentView: View {
         
         
         VStack {
-            Text(questionsForUsers[questionCounter])
+            Text(questionsForUsers[randomNum[questionCounter]])
             Text(answerDisplay)
             Button("A"){
                 if ques.answer[randomNum[questionCounter]] == "A"{
@@ -81,14 +96,14 @@ struct ContentView: View {
             
         }
         .padding()
-        .onAppear{
-            for i in 0..<ques.question.count{
-                randomNum.append(i)
-            }
-            randomNum.shuffle()
-            randomNum[questionCounter]
-            print(randomNum[questionCounter])
-        }
+//        .onAppear{
+//            for i in 0..<ques.question.count{
+//                randomNum.append(i)
+//            }
+//            randomNum.shuffle()
+//            randomNum[questionCounter]
+//            print(randomNum[questionCounter])
+//        }
         
        
         
