@@ -113,6 +113,7 @@ struct ContentView: View {
                     if corCountDispSwitch == true{
                         NavigationLink(destination: SecondView(tokuten:correctionCounter)){
                             Text("次の画面へ")
+                            
                                 .padding()
                         }
                         
