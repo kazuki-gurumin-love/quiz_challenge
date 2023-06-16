@@ -111,7 +111,7 @@ struct ContentView: View {
 //                            .background(.orange)
 //                    }
                     if corCountDispSwitch == true{
-                        NavigationLink(destination: SecondView()){
+                        NavigationLink(destination: SecondView(firstView: "あなたの得点は\(correctionCounter)点でした")){
                             Text("次の画面へ")
                                 .padding()
                         }

@@ -9,8 +9,10 @@ import Foundation
 import SwiftUI
 
 struct SecondView: View{
+    var firstView: String = ""
+    
     var body: some View{
-        Text("あなたの得点は？？でした。")
+        Text(firstView)
         Text("過去の最高得点は？？です。")
     }
 }
