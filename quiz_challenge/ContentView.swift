@@ -43,75 +43,85 @@ struct ContentView: View {
         
             
         
-        ZStack{
-            VStack {
-                Text(questionsForUsers[randomNum[questionCounter]])
-                Text(answerDisplay)
-                Button("A"){
-                    if ques.answer[randomNum[questionCounter]] == "A"{
-                        answerDisplay = "正解です！"
-                        correctionCounter += 1
-                    }else{
-                        answerDisplay = "残念！正解は\(ques.answer[randomNum[questionCounter]])でした"
+        NavigationView {
+            ZStack{
+                VStack {
+                    Text(questionsForUsers[randomNum[questionCounter]])
+                    Text(answerDisplay)
+                    Button("A"){
+                        if ques.answer[randomNum[questionCounter]] == "A"{
+                            answerDisplay = "正解です！"
+                            correctionCounter += 1
+                        }else{
+                            answerDisplay = "残念！正解は\(ques.answer[randomNum[questionCounter]])でした"
+                        }
+                        
                     }
+                    .padding()
+                    Button("B"){
+                        if ques.answer[randomNum[questionCounter]] == "B"{
+                            answerDisplay = "正解です！"
+                            correctionCounter += 1
+                        }else{
+                            answerDisplay = "残念！正解は\(ques.answer[randomNum[questionCounter]])でした"
+                        }
+                        
+                        
+                    }
+                    .padding()
+                    Button("C"){
+                        if ques.answer[randomNum[questionCounter]] == "C"{
+                            answerDisplay = "正解です！"
+                            correctionCounter += 1
+                        }else{
+                            answerDisplay = "残念！正解は\(ques.answer[randomNum[questionCounter]])でした"
+                        }
+                        
+                    }
+                    .padding()
+                    Button("D"){
+                        if ques.answer[randomNum[questionCounter]] == "D"{
+                            answerDisplay = "正解です！"
+                            correctionCounter += 1
+                        }else{
+                            answerDisplay = "残念！正解は\(ques.answer[randomNum[questionCounter]])でした"
+                        }
+                        
+                    }
+                    .padding()
+                    
                     
                 }
                 .padding()
-                Button("B"){
-                    if ques.answer[randomNum[questionCounter]] == "B"{
-                        answerDisplay = "正解です！"
-                        correctionCounter += 1
-                    }else{
-                        answerDisplay = "残念！正解は\(ques.answer[randomNum[questionCounter]])でした"
+                VStack{
+                    Button("次の問題"){
+                        if ques.question.count != (1 + questionCounter){
+                            questionCounter = questionCounter + 1
+                            answerDisplay = ""
+                        }else{
+                            corCountDispSwitch = true
+                        }
+                        //                 print(questionsForUsers[questionCounter])
+                        //
+                        
+                    }.fontWeight(.bold)
+                        .padding(40)
+//                    if corCountDispSwitch == true{
+//                        Text("あなたの正解数は\(correctionCounter)でした")
+//                            .background(.orange)
+//                    }
+                    if corCountDispSwitch == true{
+                        NavigationLink(destination: SecondView()){
+                            Text("次の画面へ")
+                                .padding()
+                        }
+                        
                     }
-                    
-                    
-                }
-                .padding()
-                Button("C"){
-                    if ques.answer[randomNum[questionCounter]] == "C"{
-                        answerDisplay = "正解です！"
-                        correctionCounter += 1
-                    }else{
-                        answerDisplay = "残念！正解は\(ques.answer[randomNum[questionCounter]])でした"
-                    }
-                    
-                }
-                .padding()
-                Button("D"){
-                    if ques.answer[randomNum[questionCounter]] == "D"{
-                        answerDisplay = "正解です！"
-                        correctionCounter += 1
-                    }else{
-                        answerDisplay = "残念！正解は\(ques.answer[randomNum[questionCounter]])でした"
-                    }
-                    
-                }
-                .padding()
-                
+                }.padding(.top,500)
                 
             }
-            .padding()
-            VStack{
-                Button("次の問題"){
-                    if ques.question.count != (1 + questionCounter){
-                        questionCounter = questionCounter + 1
-                        answerDisplay = ""
-                    }else{
-                        corCountDispSwitch = true
-                    }
-                    //                 print(questionsForUsers[questionCounter])
-                    //
-                    
-                }.fontWeight(.bold)
-                    .padding(40)
-                if corCountDispSwitch == true{
-                    Text("あなたの正解数は\(correctionCounter)でした")
-                        .background(.orange)
-                }
-            }.padding(.top,500)
-            
         }
+        
     
 //        .onAppear{
 //            for i in 0..<ques.question.count{
